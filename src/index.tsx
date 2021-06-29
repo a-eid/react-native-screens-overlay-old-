@@ -1,9 +1,13 @@
-import { NativeModules } from 'react-native';
+import { Platform, requireNativeComponent, View } from 'react-native';
 
-type ScreensOverlayType = {
-  multiply(a: number, b: number): Promise<number>;
+type WindowViewProps = {
+  shown: boolean;
+  draggable: boolean;
 };
 
-const { ScreensOverlay } = NativeModules;
+export const RNScreensOverlay =
+  Platform.OS === 'ios'
+    ? requireNativeComponent<WindowViewProps>('RNScreensOverlay')
+    : View;
 
-export default ScreensOverlay as ScreensOverlayType;
+export default RNScreensOverlay;

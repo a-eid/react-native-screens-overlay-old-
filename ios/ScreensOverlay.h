@@ -1,5 +1,13 @@
-#import <React/RCTBridgeModule.h>
+#import <React/RCTViewManager.h>
+#import <React/RCTView.h>
 
-@interface ScreensOverlay : NSObject <RCTBridgeModule>
 
+@interface RNScreensOverlayManager : RCTViewManager
+@end
+
+@interface RNViewContainer: UIView
+@end
+
+
+@interface RNScreensOverlay : RCTView
 @end
